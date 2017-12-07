@@ -1,0 +1,85 @@
+//Susan Lin
+//APCS1 pd2
+//HW12--- stAtistically sPeaking
+//2017-10-05
+
+public class Stats{
+    public static void main(String[] args) {
+	/*	System.out.println(mean(2, 4, 4)); //should be 5
+	System.out.println(mean(2.0, 4.0, 4.0)); //should be 5.0
+	System.out.println(max(2, 4, 7)); //should be 7
+	System.out.println(max(2.0, 4.0, 7.0)); //should be 7.0
+	System.out.println(max(3.0, 3.0, 9.0)); //should be 9.0
+	System.out.println(geoMean(3, 3, 9)); //should be 9
+	System.out.println(geoMean(3.0, 3.0, 9.0)); //should be around 9.0
+	*/
+	System.out.println(GCD(54,24));
+    }
+
+    //should return the int mean of two ints 
+    public static int mean(int a, int b, int c) {
+	return (a + b + c) / 3; 
+    }
+
+    //should return the double mean of two doubles 
+    public static double mean(double a, double b, double c) {
+	return (a + b + c) / 3; 
+    }
+
+    //should return the bigger int of two ints 
+    public static int max(int a, int b, int c) {
+	int answer = 0;
+	if (a >= b && a >= c)
+	    {return a;}
+	if (b >= c)
+	    {return b;}
+	else {return c;} 
+    }
+
+    //should return the bigger double of two doubles 
+    public static double max(double a, double b, double c) {
+	double answer = 0;
+	if (a >= b && a >= c)
+	    {return a;}
+	if (b >= c)
+	    {return b;}
+	else {return c;} 
+    }
+
+    //should return the int geometric mean of two ints 
+    public static int geoMean(int a, int b, int c) {
+	return (int)Math.sqrt(a * b * c) ;  	
+    }
+
+    //should return the double geometric mean of two doubles 
+    public static double geoMean(double a, double b, double c) {
+	return (int)Math.sqrt(a * b * c) ;  	
+    }
+    public static int GCD(int a, int b) {
+	int ans = 0; 
+	if (a % b == 0)
+	    {ans = a;}
+	else if (b > a){
+	    b -= a;
+	    if (b > a) { 
+		if (a == 0)
+		    {ans = b;}
+		else if (b == 0)
+		    {ans = a;}
+		else {ans =  GCD(a,b);} 
+	    }
+	    else if (a > b) {
+		a -= b;
+		if ( a == 0) {
+		    ans = b;}
+		else if (b == 0) {
+		    ans = a;
+		}
+		else {ans =  GCD (a, b);} 
+	    
+	    }
+	}
+	return ans; 	
+    }
+}
+
