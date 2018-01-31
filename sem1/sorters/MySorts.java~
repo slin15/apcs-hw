@@ -1,0 +1,38 @@
+import java.util.ArrayList; 
+
+public class MySorts {
+    public static void selectionSortV( ArrayList<Comparable> data )  {
+	for (int x = 0; x < data.size() - 1; x++) {
+	    int index = x;
+	    for (int y = x + 1; y < data.size(); y++) {
+		if (data.get(y).compareTo(data.get(index)) < 0)
+		    index = y;
+	    }
+	    data.set(x, data.set(index, data.get(x))); 
+	} 
+    }
+
+    public static void insertionSortV( ArrayList<Comparable> data ) {
+	for (int x = 1; x < data.size(); x++) {
+	    for (int a = 0; a < x; a++) {
+		if (data.get(a).compareTo(data.get(x)) > 0) 
+		    data.set(a, data.set(x, data.get(a))); 
+	    } 
+	}
+    }
+
+    public static void bubbleSortV( ArrayList<Comparable> data ) {
+	for (Comparable a: data) { 
+	    for (int x = 0; x < data.size() -1; x++) {
+		if (data.get(x).compareTo(data.get(x+1)) > 0){
+		    Comparable y = data.get(x);
+		    data.set(x, data.get(x+1));
+		    data.set(x+1, y); 
+		} 
+	    }
+	}
+    } 
+	
+    public static void main (String[] args) {
+    } 
+} 
